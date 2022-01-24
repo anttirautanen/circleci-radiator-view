@@ -1,0 +1,18 @@
+{
+  "name": "circleci-radiator-view",
+  "version": "0.1.0",
+  "description": "Many continuous integration services lack a nice and simple radiator view / dashboard. This project displays all your projects and selected branches with a beautiful build status based coloring.",
+  "scripts": {
+    "start": "http-server --port 9002 docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anttirautanen/circleci-radiator-view.git"
+  },
+  "author": "Antti Rautanen <tmianttirautanen@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/anttirautanen/circleci-radiator-view#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
