@@ -212,6 +212,14 @@ var circleBackend = function(settings, resultCallback) {
         .filter(function(build) {
           return !!build
         })
+        .filter((build) => {
+          if (build.branch.indexOf('dependabot') === 0) {
+            return false
+          }
+          const secondsSinceStart = Number((new Date()) - build.started)
+          const twoWeeksInMilliSeconds = 1209600000
+          return secondsSinceStart < twoWeeksInMilliSeconds
+        })
       resultCallback(undefined, builds)
     },
     {
