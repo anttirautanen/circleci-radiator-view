@@ -181,7 +181,7 @@ var circleBackend = function(settings, resultCallback) {
           return acc.concat(
             Object.keys(repository.branches).map(function(branchName) {
               var branch = repository.branches[branchName]
-              var hasNeverBuilt = !branch.running_builds && !branch.recent_builds
+              var hasNeverBuilt = branch.running_builds.length === 0 && branch.recent_builds.length === 0
               if (hasNeverBuilt) {
                 console.warn(
                   'Repository',
